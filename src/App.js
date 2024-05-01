@@ -5,7 +5,7 @@ import { GlobalContext } from './context/global.context';
 import { Box, Flex } from '@chakra-ui/react';
 
 function App() {
-  const { currentStep } = useContext(GlobalContext);
+  const { currentStep, className } = useContext(GlobalContext);
 
   return (
     <Box
@@ -14,32 +14,34 @@ function App() {
       bg='shopify.radial.bg'
       pt='120px'
       pos='relative'
+     
     >
       {currentStep === 0 ? (
         <Flex pos='relative' alignItems='center' justifyContent='center'>
           <Flex
             pos='relative'
-            zIndex='500'
             alignItems='center'
             justifyContent='center'
+            zIndex='3'
+            className={className === 'animationTop' && className}
           >
             <Layout1 />
           </Flex>
           <Flex
             pos='absolute'
-            zIndex='2'
             top='-20px'
             alignItems='center'
             justifyContent='center'
+            zIndex='2'
           >
             <Layout2 />
           </Flex>
           <Flex
             pos='absolute'
-            zIndex='1'
             top='-40px'
             alignItems='center'
             justifyContent='center'
+            zIndex='1'
           >
             <Layout3 />
           </Flex>
@@ -48,25 +50,36 @@ function App() {
         <Flex pos='relative' alignItems='center' justifyContent='center'>
           <Flex
             pos='relative'
-            zIndex='2'
             top='-20px'
             alignItems='center'
             justifyContent='center'
+            zIndex='2'
+            className={className === 'animationTop1' && className}
           >
             <Layout2 />
           </Flex>
           <Flex
             pos='absolute'
-            zIndex='1'
             top='-40px'
             alignItems='center'
             justifyContent='center'
+            zIndex='1'
           >
             <Layout3 />
           </Flex>
         </Flex>
       ) : (
-        <Layout3 />
+        <Flex pos='relative' alignItems='center' justifyContent='center'>
+          <Flex
+            pos='relative'
+            top='-40px'
+            alignItems='center'
+            justifyContent='center'
+            className={className === 'animationTop2' && className}
+          >
+            <Layout3 />
+          </Flex>
+        </Flex>
       )}
     </Box>
   );

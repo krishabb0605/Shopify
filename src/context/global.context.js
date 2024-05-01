@@ -5,9 +5,24 @@ export const GlobalContext = createContext();
 const GlobalContextProvider = (props) => {
   const [currentStep, setCurrentStep] = useState(0);
   const [displayCard, setDisplayCard] = useState([]);
+  const [className, setClassName] = useState();
 
   const handleStepCount = (isNext) => {
-    setCurrentStep(isNext ? currentStep + 1 : currentStep - 1);
+    
+    const stepCount = isNext ? currentStep + 1 : currentStep - 1;
+
+    const classNameData =
+      stepCount === 1
+        ? 'animationTop'
+        : stepCount === 2
+        ? 'animationTop1'
+        : 'animationTop2';
+
+    setClassName(classNameData);
+
+    setTimeout(() => {
+      setCurrentStep(stepCount);
+    }, 1000);
   };
 
   useEffect(() => {
@@ -23,6 +38,7 @@ const GlobalContextProvider = (props) => {
       value={{
         currentStep,
         displayCard,
+        className,
         handleStepCount,
       }}
     >

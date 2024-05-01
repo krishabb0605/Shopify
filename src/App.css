@@ -1,3 +1,99 @@
-.App {
-  text-align: center;
+.animationTop {
+  animation: changePosition 1s;
+}
+
+@keyframes changePosition {
+  from {
+    top: 0px;
+    opacity: 1;
+  }
+  to {
+    top: 20px;
+    opacity: 0;
+  }
+}
+
+.animationTop1 {
+  animation: changePosition1 1s;
+}
+
+@keyframes changePosition1 {
+  from {
+    top: -20px;
+    opacity: 1;
+  }
+  to {
+    top: 0px;
+    opacity: 0;
+  }
+}
+
+.animationTo2 {
+  animation: changePosition2 1s;
+  height: 400px !important;
+}
+
+@keyframes changePosition2 {
+  from {
+    top: -40px;
+    opacity: 1;
+  }
+  to {
+    top: -20px;
+    opacity: 0;
+  }
+}
+
+.animationCard {
+  animation: abc 0.5s;
+}
+
+@keyframes abc {
+  from {
+    width: 900px;
+  }
+  to {
+    width: 900px;
+  }
+}
+
+.animationCard2 {
+  animation: abc2 0.5s;
+}
+
+@keyframes abc2 {
+  from {
+    width: 880px;
+  }
+  to {
+    width: 900px;
+  }
+}
+
+.animationCard3 {
+  animation: abc3 0.5s;
+}
+
+@keyframes abc3 {
+  from {
+    width: 860px;
+    height: 290px;
+  }
+  to {
+    width: 900px;
+    height: 400px;
+  }
+}
+
+.animationText {
+  animation-name: xyz;
+  animation-duration: 2s;
+}
+@keyframes xyz {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
