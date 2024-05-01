@@ -9,18 +9,36 @@ import {
   Heading,
   Text,
 } from '@chakra-ui/react';
-import React from 'react';
+import React, { useContext } from 'react';
+import { GlobalContext } from '../../context/global.context';
 
-const Layout = () => {
+const Layout1 = () => {
+  const { displayCard, handleStepCount } = useContext(GlobalContext);
+
+  console.log(displayCard);
   return (
-    <Box h='100vh' width='100vw' bg='shopify.radial.bg'>
-      <Flex alignItems='center' justifyContent='center' h='100%'>
-        <Card variant='outline'>
-          <CardHeader>
-            <Heading size='md' textAlign='start'>
-              {' '}
-              Where would you like to sell?
-            </Heading>
+    <Box>
+      <Flex justifyContent='center'>
+        <Card variant='outline' pos='relative' w='900px' borderRadius='8px'>
+          {/* {displayCard.map((cardValue, index) => (
+            <Card
+              height='30px'
+              width={`calc(100% - ${cardValue}px)`}
+              pos='absolute'
+              alignSelf='center'
+              bg='#e6e6e6'
+              top={`${(index + 1) * 5 - cardValue}px`}
+              borderRadius='8px'
+              zIndex={`calc(3 - ${index + 1})`}
+            />
+          ))} */}
+          <CardHeader
+            zIndex='3'
+            backgroundColor='inherit'
+            borderRadius='8px'
+            textAlign='start'
+          >
+            <Heading size='md'>Where would you like to sell?</Heading>
             <Text opacity='0.7'>
               Pick as many as you like - you can alwaays change these later.
               we'll make sure you've set up to sell in these places.
@@ -53,7 +71,7 @@ const Layout = () => {
             </Flex>
           </CardBody>
           <CardFooter alignItems='center' justifyContent='end'>
-            <Button>{'next >'}</Button>
+            <Button onClick={() => handleStepCount(true)}>{'Next >'}</Button>
           </CardFooter>
         </Card>
       </Flex>
@@ -61,4 +79,4 @@ const Layout = () => {
   );
 };
 
-export default Layout;
+export default Layout1;
