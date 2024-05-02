@@ -16,15 +16,15 @@ import { GrFormNextLink } from 'react-icons/gr';
 import '../../App.css';
 
 const Layout3 = () => {
-  const {  handleStepCount, className } = useContext(GlobalContext);
+  const { handleStepCount, className, currentStep } = useContext(GlobalContext);
   const [isLoading, setIsLoading] = useState(false);
   return (
     <Box>
       <Flex justifyContent='center'>
         <Card
           variant='outline'
-          w={className === 'animationTop1' ? '900px' : '860px'}
-          h={className === 'animationTop1' ? '400px' : '290px'}
+          w={currentStep === 2 ? '900px' : '860px'}
+          h={currentStep === 2 ? '400px' : '290px'}
           overflow='hidden'
           className={className === 'animationTop1' ? 'animationCard3' : ''}
         >

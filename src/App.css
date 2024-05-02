@@ -1,5 +1,20 @@
+/* for step 1 */
+
+.animationCard {
+  animation: abc 1s;
+}
+
+@keyframes abc {
+  from {
+    width: 900px;
+  }
+  to {
+    width: 900px;
+  }
+}
+
 .animationTop {
-  animation: changePosition 1s;
+  animation: changePosition 2s;
 }
 
 @keyframes changePosition {
@@ -13,8 +28,10 @@
   }
 }
 
+/* for step 2 */
+
 .animationTop1 {
-  animation: changePosition1 1s;
+  animation: changePosition1 2s;
 }
 
 @keyframes changePosition1 {
@@ -23,13 +40,28 @@
     opacity: 1;
   }
   to {
-    top: 0px;
+    top: 20px;
     opacity: 0;
   }
 }
 
-.animationTo2 {
-  animation: changePosition2 1s;
+.animationCard2 {
+  animation: abc2 1s;
+}
+
+@keyframes abc2 {
+  from {
+    width: 880px;
+  }
+  to {
+    width: 900px;
+  }
+}
+
+/* for step 3 */
+
+.animationTop2 {
+  animation: changePosition2 2s;
   height: 400px !important;
 }
 
@@ -44,34 +76,9 @@
   }
 }
 
-.animationCard {
-  animation: abc 0.5s;
-}
-
-@keyframes abc {
-  from {
-    width: 900px;
-  }
-  to {
-    width: 900px;
-  }
-}
-
-.animationCard2 {
-  animation: abc2 0.5s;
-}
-
-@keyframes abc2 {
-  from {
-    width: 880px;
-  }
-  to {
-    width: 900px;
-  }
-}
-
 .animationCard3 {
-  animation: abc3 0.5s;
+  animation: abc3 1s;
+  height: 400px !important;
 }
 
 @keyframes abc3 {
@@ -85,15 +92,77 @@
   }
 }
 
+/* Text animation */
+
 .animationText {
   animation-name: xyz;
   animation-duration: 2s;
 }
+
 @keyframes xyz {
   from {
     opacity: 0;
   }
   to {
     opacity: 1;
+  }
+}
+
+.animationReturn {
+  animation: animationR 2s;
+}
+
+@keyframes animationR {
+  to {
+    top: 0px;
+    opacity: 1;
+  }
+  from {
+    top: 20px;
+    opacity: 0;
+  }
+}
+
+.animationReturn1 {
+  animation: animationR1 2s;
+}
+
+@keyframes animationR1 {
+  to {
+    top: -20px;
+    opacity: 1;
+  }
+  from {
+    top: 0px;
+    opacity: 0;
+  }
+}
+
+.animationCard2Return {
+  animation: animationReturnCard2 2s;
+}
+
+@keyframes animationReturnCard2 {
+  from {
+    width: 880px;
+  }
+
+  to {
+    width: 900px;
+  }
+}
+
+.animationCardReturn{
+  animation: animationReturnCard 2s;
+}
+
+
+@keyframes animationReturnCard {
+  from {
+    width: 880px;
+  }
+
+  to {
+    width: 900px;
   }
 }

@@ -14,7 +14,7 @@ import { GlobalContext } from '../../context/global.context';
 import '../../App.css';
 
 const Layout1 = () => {
-  const { handleStepCount } = useContext(GlobalContext);
+  const { handleStepCount, className } = useContext(GlobalContext);
 
   return (
     <Box>
@@ -24,7 +24,7 @@ const Layout1 = () => {
           w='900px'
           borderRadius='8px'
           h='400px'
-          // className={currentStep === 0 ? style.animationCard : ''}
+          className={className === 'animationReturn' ? 'animationCardReturn' : ''}
         >
           <Box className='animationText'>
             <CardHeader

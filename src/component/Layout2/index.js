@@ -14,21 +14,26 @@ import { GlobalContext } from '../../context/global.context';
 import '../../App.css';
 
 const Layout2 = () => {
-  const {  handleStepCount, className } = useContext(GlobalContext);
-
+  const { handleStepCount, className, currentStep } = useContext(GlobalContext);
+  
   return (
     <Box>
       <Flex justifyContent='center'>
         <Card
           variant='outline'
-          w={className === 'animationTop' ? '900px' : '880px'}
+          w={currentStep === 1 ? '900px' : '880px'}
           borderRadius='8px'
-          className={className === 'animationTop' ? 'animationCard2' : ''}
+          className={
+            className === 'animationTop'
+              ? 'animationCard2'
+              : className === 'animationReturn1'
+              ? 'animationCard2Return'
+              : ''
+          }
           h='270px'
+          bg='#b9b9b9'
         >
-          <Box
-            className={className === 'animationTop' ? 'animationText' : ''}
-          >
+          <Box className={className === 'animationTop' ? 'animationText' : ''}>
             <CardHeader
               // zIndex='4'
               backgroundColor='inherit'

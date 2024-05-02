@@ -14,16 +14,22 @@ function App() {
       bg='shopify.radial.bg'
       pt='120px'
       pos='relative'
-     
     >
       {currentStep === 0 ? (
         <Flex pos='relative' alignItems='center' justifyContent='center'>
           <Flex
-            pos='relative'
+            pos='absolute'
+            top='0px'
             alignItems='center'
             justifyContent='center'
             zIndex='3'
-            className={className === 'animationTop' && className}
+            className={
+              className === 'animationTop'
+                ? className
+                : className === 'animationReturn'
+                ? className
+                : ''
+            }
           >
             <Layout1 />
           </Flex>
@@ -54,7 +60,13 @@ function App() {
             alignItems='center'
             justifyContent='center'
             zIndex='2'
-            className={className === 'animationTop1' && className}
+            className={
+              className === 'animationTop1'
+                ? className
+                : className === 'animationReturn1'
+                ? className
+                : ''
+            }
           >
             <Layout2 />
           </Flex>
@@ -75,7 +87,13 @@ function App() {
             top='-40px'
             alignItems='center'
             justifyContent='center'
-            className={className === 'animationTop2' && className}
+            className={
+              className === 'animationTop2'
+                ? className
+                : className == 'animationReturn'
+                ? className
+                : ''
+            }
           >
             <Layout3 />
           </Flex>
