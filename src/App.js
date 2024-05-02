@@ -24,10 +24,10 @@ function App() {
             justifyContent='center'
             zIndex='3'
             className={
-              className === 'animationTop'
-                ? className
-                : className === 'animationReturn'
-                ? className
+              className === 'animationTop1'
+                ? 'animateTopToBottom'
+                : className === 'animationReturn1'
+                ? 'animateBottomToTop'
                 : ''
             }
           >
@@ -61,10 +61,10 @@ function App() {
             justifyContent='center'
             zIndex='2'
             className={
-              className === 'animationTop1'
-                ? className
-                : className === 'animationReturn1'
-                ? className
+              className === 'animationTop2'
+                ? 'animateTopToBottom'
+                : className === 'animationReturn2'
+                ? 'animateBottomToTop'
                 : ''
             }
           >
@@ -88,10 +88,10 @@ function App() {
             alignItems='center'
             justifyContent='center'
             className={
-              className === 'animationTop2'
-                ? className
-                : className == 'animationReturn'
-                ? className
+              className === 'animationTop3'
+                ? 'animateTopToBottom'
+                : className == 'animationReturn1'
+                ? 'animateBottomToTop'
                 : ''
             }
           >

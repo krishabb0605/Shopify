@@ -12,34 +12,34 @@ const GlobalContextProvider = (props) => {
     if (isNext) {
       const classNameData =
         stepCount === 1
-          ? 'animationTop'
-          : stepCount === 2
           ? 'animationTop1'
-          : 'animationTop2';
+          : stepCount === 2
+          ? 'animationTop2'
+          : 'animationTop3';
 
       setClassName(classNameData);
+
       setTimeout(() => {
         setCurrentStep(stepCount);
         setClassName('');
-      }, 2000);
+      }, 1000);
     } else {
       setCurrentStep(stepCount);
 
       const classNameData =
         stepCount === 0
-          ? 'animationReturn'
-          : stepCount === 1
           ? 'animationReturn1'
-          : 'animationReturn2';
+          : stepCount === 1
+          ? 'animationReturn2'
+          : 'animationReturn3';
+
       setClassName(classNameData);
 
       setTimeout(() => {
         setClassName('');
-      }, 2000);
+      }, 1000);
     }
   };
-
-  console.log('uytdtg');
 
   return (
     <GlobalContext.Provider

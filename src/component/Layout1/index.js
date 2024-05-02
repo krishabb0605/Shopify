@@ -23,8 +23,7 @@ const Layout1 = () => {
           variant='outline'
           w='900px'
           borderRadius='8px'
-          h='400px'
-          className={className === 'animationReturn' ? 'animationCardReturn' : ''}
+          // className={className === 'animationCard' ? 'animationCardReturn' : ''}
         >
           <Box className='animationText'>
             <CardHeader

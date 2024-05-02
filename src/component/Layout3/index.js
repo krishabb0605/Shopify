@@ -18,24 +18,24 @@ import '../../App.css';
 const Layout3 = () => {
   const { handleStepCount, className, currentStep } = useContext(GlobalContext);
   const [isLoading, setIsLoading] = useState(false);
-  console.log(className);
   return (
     <Box>
       <Flex justifyContent='center'>
         <Card
           variant='outline'
-          w={currentStep === 2 ? '900px' : '860px'}
-          h={currentStep === 2 ? '400px' : '290px'}
+          w='820px'
+          transform={currentStep === 2 ? 'scaleX(1.05)' : 'scaleX(1)'}
+          h={currentStep === 2 ? 'auto' : '200px'}
           overflow='hidden'
           className={
-            className === 'animationTop1'
-              ? 'animationCard3'
-              : className === 'animationReturn1'
-              ? 'returnAnimation2'
+            className === 'animationTop2'
+              ? 'animationCard'
+              : className === 'animationReturn2'
+              ? 'animationCardReturn'
               : ''
           }
         >
-          <Box className={className === 'animationTop1' ? 'animationText' : ''}>
+          <Box className={className === 'animationTop2' ? 'animationText' : ''}>
             <CardHeader textAlign='start'>
               <Heading size='md'>What do you plan to sell first ?</Heading>
               <Text opacity='0.7'>

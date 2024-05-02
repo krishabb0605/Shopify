@@ -1,74 +1,61 @@
-.animationTop {
-  animation: changePosition 2s;
+/* width animation */
+
+.animationCard {
+  animation: animateWidthIncrease 1s;
+  height: fit-content !important;
 }
 
-@keyframes changePosition {
+@keyframes animateWidthIncrease {
   from {
-    top: 0px;
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(1.05);
+  }
+}
+
+.animationCardReturn {
+  animation: animateWidthDecrease 1s;
+}
+
+@keyframes animateWidthDecrease {
+  from {
+    transform: scaleX(1.05);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* Position animation */
+
+.animateTopToBottom {
+  animation: animateTopToBottomTransition 1s;
+}
+
+@keyframes animateTopToBottomTransition {
+  from {
+    transform: translateY(0);
     opacity: 1;
   }
   to {
-    top: 20px;
+    transform: translateY(20px);
     opacity: 0;
   }
 }
 
-.animationTop1 {
-  animation: changePosition1 2s;
+.animateBottomToTop {
+  animation: animateBottomToBottomTransition 1s;
 }
 
-@keyframes changePosition1 {
+@keyframes animateBottomToBottomTransition {
   from {
-    top: -20px;
-    opacity: 1;
-  }
-  to {
-    top: 20px;
+    transform: translateY(20px);
     opacity: 0;
   }
-}
-
-.animationTop2 {
-  animation: changePosition2 2s;
-  height: 400px !important;
-}
-
-@keyframes changePosition2 {
-  from {
-    top: -40px;
+  to {
+    transform: translateY(0);
     opacity: 1;
-  }
-  to {
-    top: -20px;
-    opacity: 0;
-  }
-}
-
-.animationCard2 {
-  animation: abc2 2s;
-}
-
-@keyframes abc2 {
-  from {
-    width: 880px;
-  }
-  to {
-    width: 900px;
-  }
-}
-
-.animationCard3 {
-  animation: abc3 2s;
-}
-
-@keyframes abc3 {
-  from {
-    width: 860px;
-    height: 290px;
-  }
-  to {
-    width: 900px;
-    height: 400px;
   }
 }
 
@@ -76,7 +63,7 @@
 
 .animationText {
   animation-name: xyz;
-  animation-duration: 2s;
+  animation-duration: 1s;
 }
 
 @keyframes xyz {
@@ -85,82 +72,5 @@
   }
   to {
     opacity: 1;
-  }
-}
-
-/* return animation */
-
-.animationReturn {
-  animation: animationR 2s;
-}
-
-@keyframes animationR {
-  to {
-    top: 0px;
-    opacity: 1;
-  }
-  from {
-    top: 20px;
-    opacity: 0;
-  }
-}
-
-.animationReturn1 {
-  animation: animationR1 2s;
-}
-
-@keyframes animationR1 {
-  to {
-    top: -20px;
-    opacity: 1;
-  }
-  from {
-    top: 0px;
-    opacity: 0;
-  }
-}
-
-.animationCard2Return,
-.animationCardReturn {
-  animation: animationReturnCard2 2s;
-}
-
-@keyframes animationReturnCard2 {
-  from {
-    width: 880px;
-  }
-
-  to {
-    width: 900px;
-  }
-}
-
-.returnAnimation1 {
-  animation: returnAnimation11 2s;
-}
-
-@keyframes returnAnimation11 {
-  from {
-    width: 900px;
-  }
-
-  to {
-    width: 880px;
-  }
-}
-
-.returnAnimation2 {
-  animation: returnAnimation12 2s;
-}
-
-@keyframes returnAnimation12 {
-  from {
-    width: 900px;
-    height: 400px;
-  }
-
-  to {
-    width: 860px;
-    height: 290px;
   }
 }
