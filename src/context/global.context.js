@@ -8,6 +8,7 @@ const GlobalContextProvider = (props) => {
 
   const handleStepCount = (isNext) => {
     const stepCount = isNext ? currentStep + 1 : currentStep - 1;
+
     if (isNext) {
       const classNameData =
         stepCount === 1
@@ -18,11 +19,9 @@ const GlobalContextProvider = (props) => {
 
       setClassName(classNameData);
       setTimeout(() => {
+        setCurrentStep(stepCount);
         setClassName('');
       }, 2000);
-      setTimeout(() => {
-        setCurrentStep(stepCount);
-      }, 1000);
     } else {
       setCurrentStep(stepCount);
 
@@ -35,10 +34,12 @@ const GlobalContextProvider = (props) => {
       setClassName(classNameData);
 
       setTimeout(() => {
-        // setClassName('');
+        setClassName('');
       }, 2000);
     }
   };
+
+  console.log('uytdtg');
 
   return (
     <GlobalContext.Provider

@@ -15,7 +15,9 @@ import '../../App.css';
 
 const Layout2 = () => {
   const { handleStepCount, className, currentStep } = useContext(GlobalContext);
-  
+
+  console.log('object');
+
   return (
     <Box>
       <Flex justifyContent='center'>
@@ -28,6 +30,8 @@ const Layout2 = () => {
               ? 'animationCard2'
               : className === 'animationReturn1'
               ? 'animationCard2Return'
+              : className === 'animationReturn'
+              ? 'returnAnimation1'
               : ''
           }
           h='270px'
@@ -35,7 +39,6 @@ const Layout2 = () => {
         >
           <Box className={className === 'animationTop' ? 'animationText' : ''}>
             <CardHeader
-              // zIndex='4'
               backgroundColor='inherit'
               textAlign='start'
               borderRadius='8px'
