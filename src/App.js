@@ -5,7 +5,13 @@ import { GlobalContext } from './context/global.context';
 import { Box, Flex } from '@chakra-ui/react';
 
 function App() {
-  const { currentStep,  animationClass } = useContext(GlobalContext);
+  const { currentStep, animationClass } = useContext(GlobalContext);
+  const classsValue =
+    animationClass === 'animationCard'
+      ? 'animateTopToBottom'
+      : animationClass === 'animationCardReturn'
+      ? 'animateBottomToTop'
+      : '';
 
   return (
     <Box
@@ -20,14 +26,7 @@ function App() {
           pos='absolute'
           top='-40px'
           justifyContent='center'
-          className={
-            currentStep === 2 &&
-            (animationClass === 'animationCard'
-              ? 'animateTopToBottom'
-              : animationClass === 'animationCardReturn'
-              ? 'animateBottomToTop'
-              : '')
-          }
+          className={currentStep === 2 && classsValue}
         >
           <Layout3 />
         </Flex>
@@ -37,15 +36,7 @@ function App() {
             pos='absolute'
             top='-20px'
             justifyContent='center'
-            zIndex='2'
-            className={
-              currentStep === 1 &&
-              (animationClass === 'animationCard'
-                ? 'animateTopToBottom'
-                : animationClass === 'animationCardReturn'
-                ? 'animateBottomToTop'
-                : '')
-            }
+            className={currentStep === 1 && classsValue}
           >
             <Layout2 />
           </Flex>
@@ -56,14 +47,7 @@ function App() {
             pos='absolute'
             top='0px'
             justifyContent='center'
-            zIndex='3'
-            className={
-              animationClass === 'animationCard'
-                ? 'animateTopToBottom'
-                : animationClass === 'animationCardReturn'
-                ? 'animateBottomToTop'
-                : ''
-            }
+            className={currentStep === 0 && classsValue}
           >
             <Layout1 />
           </Flex>

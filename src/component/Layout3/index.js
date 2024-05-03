@@ -43,6 +43,7 @@ const Layout3 = () => {
                 store .
               </Text>
             </CardHeader>
+
             <CardBody>
               <Flex alignItems='center' gap='16px'>
                 <Flex flexDir='column' flex='1' gap='8px'>
@@ -69,6 +70,7 @@ const Layout3 = () => {
                 </Flex>
               </Flex>
             </CardBody>
+            
             <CardFooter alignItems='center' justifyContent='space-between'>
               <Button onClick={() => handleStepCount(false, currentStep)}>
                 {'< Back'}

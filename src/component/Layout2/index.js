@@ -38,6 +38,7 @@ const Layout2 = () => {
                 We'll help you get set up based on your business needs.
               </Text>
             </CardHeader>
+
             <CardBody>
               <Flex alignItems='center' gap='16px'>
                 <Flex flexDir='column' flex='1' gap='8px'>
@@ -52,6 +53,7 @@ const Layout2 = () => {
                 </Flex>
               </Flex>
             </CardBody>
+            
             <CardFooter alignItems='center' justifyContent='space-between'>
               <Button onClick={() => handleStepCount(false, currentStep)}>
                 {'< Back'}

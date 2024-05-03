@@ -36,6 +36,7 @@ const Layout1 = () => {
                 we'll make sure you've set up to sell in these places.
               </Text>
             </CardHeader>
+
             <CardBody>
               <Flex alignItems='center' gap='16px'>
                 <Flex flexDir='column' flex='1' gap='8px'>
@@ -62,6 +63,7 @@ const Layout1 = () => {
                 </Flex>
               </Flex>
             </CardBody>
+            
             <CardFooter alignItems='center' justifyContent='end'>
               <Button onClick={() => handleStepCount(true, currentStep)}>
                 {'Next >'}
