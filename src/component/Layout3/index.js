@@ -27,10 +27,27 @@ const Layout3 = () => {
         <Card
           variant='outline'
           w='820px'
-          transform={currentStep === 2 ? 'scaleX(1.05)' : 'scaleX(1)'}
+          transform={
+            currentStep === 2
+              ? 'scaleX(1.1)'
+              : currentStep === 1
+              ? 'scaleX(1.05)'
+              : 'scaleX(1)'
+          }
+          style={{
+            '--start': currentStep + 1 === 2 ? 1.05 : 1,
+            '--end': currentStep + 1 === 2 ? 1.1 : 1.05,
+            '--max-height': currentStep + 1 == 2 && '600px',
+          }}
           h={currentStep === 2 ? 'auto' : '200px'}
           overflow='hidden'
-          className={currentStep + 1 === 2 ? animationClass : ''}
+          className={
+            currentStep + 1 === 2
+              ? animationClass
+              : currentStep + 1 === 1
+              ? animationClass
+              : ''
+          }
         >
           <Box
             visibility='hidden'
@@ -70,7 +87,7 @@ const Layout3 = () => {
                 </Flex>
               </Flex>
             </CardBody>
-            
+
             <CardFooter alignItems='center' justifyContent='space-between'>
               <Button onClick={() => handleStepCount(false, currentStep)}>
                 {'< Back'}

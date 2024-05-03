@@ -7,10 +7,12 @@
 
 @keyframes animateWidthIncrease {
   from {
-    transform: scaleX(1);
+    transform: scaleX(var(--start, 1));
+    max-height: 200px;
   }
   to {
-    transform: scaleX(1.05);
+    transform: scaleX(var(--end, 1.05));
+    max-height: var(--max-height, 264px);
   }
 }
 
@@ -20,11 +22,11 @@
 
 @keyframes animateWidthDecrease {
   from {
-    transform: scaleX(1.05);
+    transform: scaleX(var(--end, 1.05));
     height: 394px;
   }
   to {
-    transform: scaleX(1);
+    transform: scaleX(var(--start, 1));
     height: 200px;
   }
 }
