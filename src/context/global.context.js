@@ -4,26 +4,28 @@ export const GlobalContext = createContext();
 
 const GlobalContextProvider = (props) => {
   const [currentStep, setCurrentStep] = useState(0);
-  const [className, setClassName] = useState();
+  const [animationClass, setAnimationClass] = useState();
 
-  const handleStepCount = (isNext) => {
+  const handleStepCount = (isNext, StepCountForClass) => {
     const stepCount = isNext ? currentStep + 1 : currentStep - 1;
 
-    setClassName(
-      isNext ? `animationTop${stepCount}` : `animationReturn${currentStep}`
-    );
+    if (currentStep === StepCountForClass) {
+      setAnimationClass(isNext ? 'animationCard' : 'animationCardReturn');
+    } else {
+      setAnimationClass('');
+    }
 
     if (isNext) {
       setTimeout(() => {
         setCurrentStep(stepCount);
-        setClassName('');
-      }, 500);
+        setAnimationClass('');
+      }, 1000);
     } else {
       setCurrentStep(stepCount);
 
       setTimeout(() => {
-        setClassName('');
-      }, 500);
+        setAnimationClass('');
+      }, 1000);
     }
   };
 
@@ -31,7 +33,7 @@ const GlobalContextProvider = (props) => {
     <GlobalContext.Provider
       value={{
         currentStep,
-        className,
+        animationClass,
         handleStepCount,
       }}
     >

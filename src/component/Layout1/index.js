@@ -14,7 +14,7 @@ import { GlobalContext } from '../../context/global.context';
 import '../../App.css';
 
 const Layout1 = () => {
-  const { handleStepCount } = useContext(GlobalContext);
+  const { handleStepCount, currentStep } = useContext(GlobalContext);
 
   return (
     <Box>
@@ -63,7 +63,9 @@ const Layout1 = () => {
               </Flex>
             </CardBody>
             <CardFooter alignItems='center' justifyContent='end'>
-              <Button onClick={() => handleStepCount(true)}>{'Next >'}</Button>
+              <Button onClick={() => handleStepCount(true, currentStep)}>
+                {'Next >'}
+              </Button>
             </CardFooter>
           </Box>
         </Card>

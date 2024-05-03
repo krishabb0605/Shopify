@@ -5,7 +5,8 @@ import { GlobalContext } from './context/global.context';
 import { Box, Flex } from '@chakra-ui/react';
 
 function App() {
-  const { currentStep, className } = useContext(GlobalContext);
+  const { currentStep,  animationClass } = useContext(GlobalContext);
+
   return (
     <Box
       h='100vh'
@@ -19,7 +20,14 @@ function App() {
           pos='absolute'
           top='-40px'
           justifyContent='center'
-          className={className === 'animationTop3' ? 'animateTopToBottom' : ''}
+          className={
+            currentStep === 2 &&
+            (animationClass === 'animationCard'
+              ? 'animateTopToBottom'
+              : animationClass === 'animationCardReturn'
+              ? 'animateBottomToTop'
+              : '')
+          }
         >
           <Layout3 />
         </Flex>
@@ -31,11 +39,12 @@ function App() {
             justifyContent='center'
             zIndex='2'
             className={
-              className === 'animationTop2'
+              currentStep === 1 &&
+              (animationClass === 'animationCard'
                 ? 'animateTopToBottom'
-                : className === 'animationReturn2'
+                : animationClass === 'animationCardReturn'
                 ? 'animateBottomToTop'
-                : ''
+                : '')
             }
           >
             <Layout2 />
@@ -49,9 +58,9 @@ function App() {
             justifyContent='center'
             zIndex='3'
             className={
-              className === 'animationTop1'
+              animationClass === 'animationCard'
                 ? 'animateTopToBottom'
-                : className === 'animationReturn1'
+                : animationClass === 'animationCardReturn'
                 ? 'animateBottomToTop'
                 : ''
             }

@@ -14,7 +14,7 @@ import { GlobalContext } from '../../context/global.context';
 import '../../App.css';
 
 const Layout2 = () => {
-  const { handleStepCount, className, currentStep } = useContext(GlobalContext);
+  const { handleStepCount, animationClass,currentStep } = useContext(GlobalContext);
 
   return (
     <Box>
@@ -24,13 +24,7 @@ const Layout2 = () => {
           w='860px'
           transform={currentStep === 1 ? 'scaleX(1.05)' : 'scaleX(1)'}
           borderRadius='8px'
-          className={
-            className === 'animationTop1'
-              ? 'animationCard'
-              : className === 'animationReturn1'
-              ? 'animationCardReturn'
-              : ''
-          }
+          className={currentStep + 1 === 1 ? animationClass : ''}
           bg='#b9b9b9'
         >
           <Box visibility='hidden' className={currentStep === 1 ? 'animationText' : ''}>
@@ -59,8 +53,12 @@ const Layout2 = () => {
               </Flex>
             </CardBody>
             <CardFooter alignItems='center' justifyContent='space-between'>
-              <Button onClick={() => handleStepCount(false)}>{'< Back'}</Button>
-              <Button onClick={() => handleStepCount(true)}>{'Next >'}</Button>
+              <Button onClick={() => handleStepCount(false, currentStep)}>
+                {'< Back'}
+              </Button>
+              <Button onClick={() => handleStepCount(true, currentStep)}>
+                {'Next >'}
+              </Button>
             </CardFooter>
           </Box>
         </Card>

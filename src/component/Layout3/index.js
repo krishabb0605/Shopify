@@ -16,7 +16,9 @@ import { GrFormNextLink } from 'react-icons/gr';
 import '../../App.css';
 
 const Layout3 = () => {
-  const { handleStepCount, className, currentStep } = useContext(GlobalContext);
+  const { handleStepCount, currentStep, animationClass } = useContext(
+    GlobalContext
+  );
   const [isLoading, setIsLoading] = useState(false);
 
   return (
@@ -28,13 +30,7 @@ const Layout3 = () => {
           transform={currentStep === 2 ? 'scaleX(1.05)' : 'scaleX(1)'}
           h={currentStep === 2 ? 'auto' : '200px'}
           overflow='hidden'
-          className={
-            className === 'animationTop2'
-              ? 'animationCard'
-              : className === 'animationReturn2'
-              ? 'animationCardReturn'
-              : ''
-          }
+          className={currentStep + 1 === 2 ? animationClass : ''}
         >
           <Box
             visibility='hidden'
@@ -74,7 +70,9 @@ const Layout3 = () => {
               </Flex>
             </CardBody>
             <CardFooter alignItems='center' justifyContent='space-between'>
-              <Button onClick={() => handleStepCount(false)}>{'< Back'}</Button>
+              <Button onClick={() => handleStepCount(false, currentStep)}>
+                {'< Back'}
+              </Button>
               <Button isLoading={isLoading} onClick={() => setIsLoading(true)}>
                 <Flex alignItems='center'>
                   <Text>Get started </Text>
