@@ -1,7 +1,7 @@
 /* width animation */
 
 .animationCard {
-  animation: animateWidthIncrease 1s;
+  animation: animateWidthIncrease 0.5s;
   height: fit-content !important;
 }
 
@@ -15,22 +15,24 @@
 }
 
 .animationCardReturn {
-  animation: animateWidthDecrease 1s;
+  animation: animateWidthDecrease 0.5s;
 }
 
 @keyframes animateWidthDecrease {
   from {
     transform: scaleX(1.05);
+    height: 394px;
   }
   to {
     transform: scaleX(1);
+    height: 200px;
   }
 }
 
 /* Position animation */
 
 .animateTopToBottom {
-  animation: animateTopToBottomTransition 1s;
+  animation: animateTopToBottomTransition 0.5s;
 }
 
 @keyframes animateTopToBottomTransition {
@@ -45,7 +47,7 @@
 }
 
 .animateBottomToTop {
-  animation: animateBottomToBottomTransition 1s;
+  animation: animateBottomToBottomTransition 0.5s;
 }
 
 @keyframes animateBottomToBottomTransition {
@@ -62,11 +64,11 @@
 /* Text animation */
 
 .animationText {
-  animation-name: xyz;
-  animation-duration: 1s;
+  animation: animationText 0.5s;
+  visibility: visible !important;
 }
 
-@keyframes xyz {
+@keyframes animationText {
   from {
     opacity: 0;
   }

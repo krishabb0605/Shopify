@@ -6,7 +6,6 @@ import { Box, Flex } from '@chakra-ui/react';
 
 function App() {
   const { currentStep, className } = useContext(GlobalContext);
-
   return (
     <Box
       h='100vh'
@@ -15,49 +14,20 @@ function App() {
       pt='120px'
       pos='relative'
     >
-      {currentStep === 0 ? (
-        <Flex pos='relative' alignItems='center' justifyContent='center'>
-          <Flex
-            pos='absolute'
-            top='0px'
-            alignItems='center'
-            justifyContent='center'
-            zIndex='3'
-            className={
-              className === 'animationTop1'
-                ? 'animateTopToBottom'
-                : className === 'animationReturn1'
-                ? 'animateBottomToTop'
-                : ''
-            }
-          >
-            <Layout1 />
-          </Flex>
-          <Flex
-            pos='absolute'
-            top='-20px'
-            alignItems='center'
-            justifyContent='center'
-            zIndex='2'
-          >
-            <Layout2 />
-          </Flex>
-          <Flex
-            pos='absolute'
-            top='-40px'
-            alignItems='center'
-            justifyContent='center'
-            zIndex='1'
-          >
-            <Layout3 />
-          </Flex>
+      <Flex pos='relative' justifyContent='center'>
+        <Flex
+          pos='absolute'
+          top='-40px'
+          justifyContent='center'
+          className={className === 'animationTop3' ? 'animateTopToBottom' : ''}
+        >
+          <Layout3 />
         </Flex>
-      ) : currentStep === 1 ? (
-        <Flex pos='relative' alignItems='center' justifyContent='center'>
+
+        {currentStep !== 2 && (
           <Flex
-            pos='relative'
+            pos='absolute'
             top='-20px'
-            alignItems='center'
             justifyContent='center'
             zIndex='2'
             className={
@@ -70,35 +40,26 @@ function App() {
           >
             <Layout2 />
           </Flex>
+        )}
+
+        {currentStep === 0 && (
           <Flex
             pos='absolute'
-            top='-40px'
-            alignItems='center'
+            top='0px'
             justifyContent='center'
-            zIndex='1'
-          >
-            <Layout3 />
-          </Flex>
-        </Flex>
-      ) : (
-        <Flex pos='relative' alignItems='center' justifyContent='center'>
-          <Flex
-            pos='relative'
-            top='-40px'
-            alignItems='center'
-            justifyContent='center'
+            zIndex='3'
             className={
-              className === 'animationTop3'
+              className === 'animationTop1'
                 ? 'animateTopToBottom'
-                : className == 'animationReturn1'
+                : className === 'animationReturn1'
                 ? 'animateBottomToTop'
                 : ''
             }
           >
-            <Layout3 />
+            <Layout1 />
           </Flex>
-        </Flex>
-      )}
+        )}
+      </Flex>
     </Box>
   );
 }

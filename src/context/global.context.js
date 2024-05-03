@@ -9,35 +9,21 @@ const GlobalContextProvider = (props) => {
   const handleStepCount = (isNext) => {
     const stepCount = isNext ? currentStep + 1 : currentStep - 1;
 
+    setClassName(
+      isNext ? `animationTop${stepCount}` : `animationReturn${currentStep}`
+    );
+
     if (isNext) {
-      const classNameData =
-        stepCount === 1
-          ? 'animationTop1'
-          : stepCount === 2
-          ? 'animationTop2'
-          : 'animationTop3';
-
-      setClassName(classNameData);
-
       setTimeout(() => {
         setCurrentStep(stepCount);
         setClassName('');
-      }, 1000);
+      }, 500);
     } else {
       setCurrentStep(stepCount);
 
-      const classNameData =
-        stepCount === 0
-          ? 'animationReturn1'
-          : stepCount === 1
-          ? 'animationReturn2'
-          : 'animationReturn3';
-
-      setClassName(classNameData);
-
       setTimeout(() => {
         setClassName('');
-      }, 1000);
+      }, 500);
     }
   };
 

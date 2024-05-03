@@ -18,6 +18,7 @@ import '../../App.css';
 const Layout3 = () => {
   const { handleStepCount, className, currentStep } = useContext(GlobalContext);
   const [isLoading, setIsLoading] = useState(false);
+
   return (
     <Box>
       <Flex justifyContent='center'>
@@ -35,7 +36,10 @@ const Layout3 = () => {
               : ''
           }
         >
-          <Box className={className === 'animationTop2' ? 'animationText' : ''}>
+          <Box
+            visibility='hidden'
+            className={currentStep === 2 ? 'animationText' : ''}
+          >
             <CardHeader textAlign='start'>
               <Heading size='md'>What do you plan to sell first ?</Heading>
               <Text opacity='0.7'>

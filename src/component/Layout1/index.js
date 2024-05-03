@@ -14,7 +14,7 @@ import { GlobalContext } from '../../context/global.context';
 import '../../App.css';
 
 const Layout1 = () => {
-  const { handleStepCount, className } = useContext(GlobalContext);
+  const { handleStepCount } = useContext(GlobalContext);
 
   return (
     <Box>
@@ -23,9 +23,8 @@ const Layout1 = () => {
           variant='outline'
           w='900px'
           borderRadius='8px'
-          // className={className === 'animationCard' ? 'animationCardReturn' : ''}
         >
-          <Box className='animationText'>
+          <Box className='animationText' visibility='hidden'>
             <CardHeader
               backgroundColor='inherit'
               borderRadius='8px'

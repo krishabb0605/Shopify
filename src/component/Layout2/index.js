@@ -33,7 +33,7 @@ const Layout2 = () => {
           }
           bg='#b9b9b9'
         >
-          <Box className={className === 'animationTop1' ? 'animationText' : ''}>
+          <Box visibility='hidden' className={currentStep === 1 ? 'animationText' : ''}>
             <CardHeader
               backgroundColor='inherit'
               textAlign='start'
