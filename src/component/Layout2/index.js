@@ -42,18 +42,26 @@ const Layout2 = () => {
             <CardBody>
               <Flex alignItems='center' gap='16px'>
                 <Flex flexDir='column' flex='1' gap='8px'>
-                  <Box backgroundColor='shopify.text.gray' p='16px'>
+                  <Box
+                    backgroundColor='shopify.text.gray'
+                    p='16px'
+                    borderRadius='12px'
+                  >
                     I'm just starting
                   </Box>
                 </Flex>
                 <Flex flexDir='column' flex='1' gap='8px'>
-                  <Box backgroundColor='shopify.text.gray' p='16px'>
+                  <Box
+                    backgroundColor='shopify.text.gray'
+                    p='16px'
+                    borderRadius='12px'
+                  >
                     I'm already selling online or in person.
                   </Box>
                 </Flex>
               </Flex>
             </CardBody>
-            
+
             <CardFooter alignItems='center' justifyContent='space-between'>
               <Button onClick={() => handleStepCount(false, currentStep)}>
                 {'< Back'}

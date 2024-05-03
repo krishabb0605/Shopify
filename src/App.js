@@ -7,10 +7,10 @@ import { Box, Flex } from '@chakra-ui/react';
 function App() {
   const { currentStep, animationClass } = useContext(GlobalContext);
   const classsValue =
-    animationClass === 'animationCard'
-      ? 'animateTopToBottom'
-      : animationClass === 'animationCardReturn'
-      ? 'animateBottomToTop'
+    animationClass === 'cardWidthIncrease'
+      ? 'cardTopToBottom'
+      : animationClass === 'cardWidthDecrease'
+      ? 'cardBottomToTop'
       : '';
 
   return (

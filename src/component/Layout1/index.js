@@ -40,30 +40,54 @@ const Layout1 = () => {
             <CardBody>
               <Flex alignItems='center' gap='16px'>
                 <Flex flexDir='column' flex='1' gap='8px'>
-                  <Box backgroundColor='shopify.text.gray' p='16px'>
+                  <Flex
+                    backgroundColor='shopify.text.gray'
+                    p='16px'
+                    borderRadius='12px'
+                  >
                     1
-                  </Box>
-                  <Box backgroundColor='shopify.text.gray' p='16px'>
+                  </Flex>
+                  <Box
+                    backgroundColor='shopify.text.gray'
+                    p='16px'
+                    borderRadius='12px'
+                  >
                     2
                   </Box>
-                  <Box backgroundColor='shopify.text.gray' p='16px'>
+                  <Box
+                    backgroundColor='shopify.text.gray'
+                    p='16px'
+                    borderRadius='12px'
+                  >
                     3
                   </Box>
                 </Flex>
                 <Flex flexDir='column' flex='1' gap='8px'>
-                  <Box backgroundColor='shopify.text.gray' p='16px'>
+                  <Box
+                    backgroundColor='shopify.text.gray'
+                    p='16px'
+                    borderRadius='12px'
+                  >
                     4
                   </Box>
-                  <Box backgroundColor='shopify.text.gray' p='16px'>
+                  <Box
+                    backgroundColor='shopify.text.gray'
+                    p='16px'
+                    borderRadius='12px'
+                  >
                     5
                   </Box>
-                  <Box backgroundColor='shopify.text.gray' p='16px'>
+                  <Box
+                    backgroundColor='shopify.text.gray'
+                    p='16px'
+                    borderRadius='12px'
+                  >
                     6
                   </Box>
                 </Flex>
               </Flex>
             </CardBody>
-            
+
             <CardFooter alignItems='center' justifyContent='end'>
               <Button onClick={() => handleStepCount(true, currentStep)}>
                 {'Next >'}

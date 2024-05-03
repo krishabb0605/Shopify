@@ -10,7 +10,7 @@ const GlobalContextProvider = (props) => {
     const stepCount = isNext ? currentStep + 1 : currentStep - 1;
 
     if (currentStep === StepCountForClass) {
-      setAnimationClass(isNext ? 'animationCard' : 'animationCardReturn');
+      setAnimationClass(isNext ? 'cardWidthIncrease' : 'cardWidthDecrease');
     } else {
       setAnimationClass('');
     }

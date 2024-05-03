@@ -64,24 +64,48 @@ const Layout3 = () => {
             <CardBody>
               <Flex alignItems='center' gap='16px'>
                 <Flex flexDir='column' flex='1' gap='8px'>
-                  <Box backgroundColor='shopify.text.gray' p='16px'>
+                  <Box
+                    backgroundColor='shopify.text.gray'
+                    p='16px'
+                    borderRadius='12px'
+                  >
                     111
                   </Box>
-                  <Box backgroundColor='shopify.text.gray' p='16px'>
+                  <Box
+                    backgroundColor='shopify.text.gray'
+                    p='16px'
+                    borderRadius='12px'
+                  >
                     2111
                   </Box>
-                  <Box backgroundColor='shopify.text.gray' p='16px'>
+                  <Box
+                    backgroundColor='shopify.text.gray'
+                    p='16px'
+                    borderRadius='12px'
+                  >
                     3111
                   </Box>
                 </Flex>
                 <Flex flexDir='column' flex='1' gap='8px'>
-                  <Box backgroundColor='shopify.text.gray' p='16px'>
+                  <Box
+                    backgroundColor='shopify.text.gray'
+                    p='16px'
+                    borderRadius='12px'
+                  >
                     411
                   </Box>
-                  <Box backgroundColor='shopify.text.gray' p='16px'>
+                  <Box
+                    backgroundColor='shopify.text.gray'
+                    p='16px'
+                    borderRadius='12px'
+                  >
                     5111
                   </Box>
-                  <Box backgroundColor='shopify.text.gray' p='16px'>
+                  <Box
+                    backgroundColor='shopify.text.gray'
+                    p='16px'
+                    borderRadius='12px'
+                  >
                     6111
                   </Box>
                 </Flex>

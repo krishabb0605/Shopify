@@ -1,6 +1,6 @@
 /* width animation */
 
-.animationCard {
+.cardWidthIncrease {
   animation: animateWidthIncrease 1s;
   height: fit-content !important;
 }
@@ -16,7 +16,7 @@
   }
 }
 
-.animationCardReturn {
+.cardWidthDecrease {
   animation: animateWidthDecrease 1s;
 }
 
@@ -33,7 +33,7 @@
 
 /* Position animation */
 
-.animateTopToBottom {
+.cardTopToBottom {
   animation: animateTopToBottomTransition 1s;
 }
 
@@ -48,7 +48,7 @@
   }
 }
 
-.animateBottomToTop {
+.cardBottomToTop {
   animation: animateBottomToBottomTransition 1s;
 }
 
